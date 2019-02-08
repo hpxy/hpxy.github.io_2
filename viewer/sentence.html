@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>haopXpycary's memories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  <meta charset="utf-8" /> 
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
+  <link rel="stylesheet" type="text/css" href="./../index.css" />
+  
+  <style>
+  p {   font-family: SimHei,sans-serif; }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <iframe src="./../header.html" width="100%" height="60px" frameborder="0" scrolling="no" name="headFrame"></iframe>
+  <!-- 跳转到发送界面 -->
+  <p class="righttop"><i class="fa fa-send-o" onclick="location='trans.html'"></i></p>
+  
+  <div>
+  <script>
+  // XML 解析
+  if (window.XMLHttpRequest){
+    xmlhttp=new XMLHttpRequest();
+  }
+  else {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+  xmlhttp.open("GET","trans.xml",false);
+  xmlhttp.send();
+  xmlDoc = xmlhttp.responseXML;
+  
+  var user_name = xmlDoc.getElementsByTagName("author");
+  var user_ip = xmlDoc.getElementsByTagName("ip");
+  var user_date = xmlDoc.getElementsByTagName("date");
+  var user_passage = xmlDoc.getElementsByTagName("passage");
+  
+  for (i = 0;i < user_name.length; i++) {
+    document.write('<div class="article">');
+    document.write('  <h2>'+user_name[i].childNodes[0].nodeValue+'</h2>');
+    document.write('  <p class="label">');
+    document.write('    <i class="fa fa-pagelines"></i> '+user_date[i].childNodes[0].nodeValue+" &nbsp;");
+    document.write('    <i class="fa fa-map-marker"></i> '+user_ip[i].childNodes[0].nodeValue);
+    document.write('  </p>');
+    document.write('  <p class="sentence">'+user_passage[i].childNodes[0].nodeValue+'</p>');
+    document.write('  <hr />');
+    document.write('</div>');
+  }
+  </script>
+
+  <!--
+  <div class="article">
+    <h2>UserName</h2>
+    <p class="label">
+      <i class="fa fa-pagelines"></i> yyyy-mm-dd hh:mm &nbsp;
+      <i class="fa fa-map-marker"></i> ipAddress
+    </p>
+    <p>Message</p>
+    <hr />
+  </div>
+  -->
+  </div>
+  
+</body>
+</html>
