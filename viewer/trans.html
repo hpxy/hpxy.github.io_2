@@ -10,14 +10,29 @@
 <body>
   <iframe src="./../header.html" width="100%" height="60px" frameborder="0" scrolling="no" name="headFrame"></iframe>
   
+  <script>
+    function saveDataLocal() {
+      if (!localStorage.user_name_list) {
+        localStorage.user_upload_times = 0;
+        localStorage.user_name_list = new Array();
+        localStorage.user_ip_list = new Array();
+        localStorage.user_date_list = new Array();
+        localStorage.user_passage_list = new Array();
+    }
+        localStorage.user_name_list[localStorage.user_upload_times] = document.getElementById("user_name").value;
+        localStorage.user_passage_list[localStorage.user_upload_times] = document.getElementById("user_passage").value;
+        var myDate = new Date();
+        localStorage.user_date_list[localStorage.user_upload_times] = myDate.getFullYear().toString() + '/' + (myDate.getMonth() + 1).toString() + '/' + myDate.getDate().toString() + ' ' + myDate.getHours().toString() + ':' + myDate.getMinutes().toString() + ':' + myDate.getSeconds().toString();
+        localStorage.user_ip_list[localStorage] = "此刻"
+    }
+  </script>
   <h3> 迷失岛</h3><br /><hr />
-  <form action="./watting.html" method="post" id="raw_user_passage">
-    <input type="text" name="name" placeholder="你的名字..." min=1 max=20/><br /><br /><hr />
-    <textarea type="text" name="user_passage" placeholder="说点什么吧..." min=3 max=300 style="height:300px"/></textarea>
+  <form action="./watting.html" onsubmit="saveDataLocal()" method="post" id="raw_user_passage">
+    <input id="user_name" type="text" name="name" placeholder="你的名字..." min=1 max=20/><br /><br /><hr />
+    <textarea id="user_passage" type="text" name="user_passage" placeholder="说点什么吧..." min=3 max=300 style="height:300px"/></textarea>
     <embed src="../icon/upload.svg" 
       type="image/svg+xml"
       pluginspage="http://www.adobe.com/svg/viewer/install/" class="svg righttop" onclick="document.getElementById('raw_user_passage').submit();" />
-
   </form>
 </body>
 </html>

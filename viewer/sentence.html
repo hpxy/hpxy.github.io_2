@@ -17,7 +17,7 @@
   <!-- 跳转到发送界面 -->
   <p class="righttop"><i class="fa fa-send-o" onclick="location='trans.html'"></i></p>
   
-  <h3> 远洋</h3>
+  <h3> 远洋</h3><br />
   <div>
   <script>
   // XML 解析
@@ -44,10 +44,12 @@
     document.write('    <i class="fa fa-pagelines"></i> '+user_date[i].childNodes[0].nodeValue+" &nbsp;");
     document.write('    <i class="fa fa-map-marker"></i> '+user_ip[i].childNodes[0].nodeValue);
     document.write('  </p>');
+    document.write('  <p class="sentence">');
     for (j = 0; j < user_passage[i].childNodes.length; j++)  {
       if (user_passage[i].childNodes[j].nodeValue)
-        document.write('  <p class="sentence">'+user_passage[i].childNodes[j].nodeValue+'</p>');
+        document.write(user_passage[i].childNodes[j].nodeValue+'<br />');
     }
+    document.write('  </p>');
     document.write('  <hr />');
     document.write('</div>');
   }
