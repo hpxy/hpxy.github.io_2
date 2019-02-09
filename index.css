@@ -49,7 +49,7 @@ p,input {
   font-family: noteFont, SimHei, sans-serif;
   padding: 0px 10px 10px 10px;
   color: 	#5B5B5B;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
   /*强制换行*/
   word-break:break-all;
   }
@@ -77,6 +77,8 @@ textarea {
 }
 p.sentence {
   font-family: sans-serif;
+  // white-space: pre;
+  word-break: break-all;
 }
 p.handwrite {
   font-family: "Comic Sans MS", cursive, sans-serif;
