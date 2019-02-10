@@ -44,7 +44,7 @@ i {
 }
 p,input {
   // text-indent: 2px;
-  font-size: 90%;
+  font-size: 100%;
   line-height: 150%;
   font-family: noteFont, SimHei, sans-serif;
   padding: 0px 10px 10px 10px;
@@ -79,7 +79,7 @@ p.sentence {
   font-family: sans-serif;
   // white-space: pre;
   word-break: break-all;
-  font-size: 83%;
+  font-size: 93%;
   letter-spacing: 0.3px;
 }
 p.handwrite {
