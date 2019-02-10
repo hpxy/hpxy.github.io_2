@@ -1,6 +1,5 @@
-//hrs = document.getElementsByTagName("hr")
-//  console.log(hrs)
-//for (var i = 0; i < hrs.length; i++){
-  // console.log(hrs[i])
-//  hrs[i].align = 'center';
-//  }
+//防止页面后退
+window.history.pushState(null, null, document.URL);
+window.addEventListener('popstate', function () {
+    window.history.pushState(null, null, document.URL);
+});

@@ -6,10 +6,12 @@
   <meta charset="utf-8" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
   <link rel="stylesheet" type="text/css" href="./../index.css" />
+  <script type="text/javascript" src="../index.js"></script>
   
   <style>
   p {   font-family: SimHei,sans-serif; }
   </style>
+  <script src="../tools.js"></script>
 </head>
 <body>
   <!-- 导航栏 -->
@@ -20,39 +22,58 @@
   <h3> 远洋</h3><br />
   <div>
   <script>
-  // XML 解析
-  if (window.XMLHttpRequest){
-    xmlhttp=new XMLHttpRequest();
-  }
-  else {
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  
-  xmlhttp.open("GET","trans.xml",false);
-  xmlhttp.send();
-  xmlDoc = xmlhttp.responseXML;
-  
-  var user_name = xmlDoc.getElementsByTagName("author");
-  var user_ip = xmlDoc.getElementsByTagName("ip");
-  var user_date = xmlDoc.getElementsByTagName("date");
-  var user_passage = xmlDoc.getElementsByTagName("passage");
-  console.log(user_passage)
-  for (i = 0;i < user_name.length; i++) {
-    document.write('<div class="article">');
-    document.write('  <h2>'+user_name[i].childNodes[0].nodeValue+'</h2>');
-    document.write('  <p class="label">');
-    document.write('    <i class="fa fa-pagelines"></i> '+user_date[i].childNodes[0].nodeValue+" &nbsp;");
-    document.write('    <i class="fa fa-map-marker"></i> '+user_ip[i].childNodes[0].nodeValue);
-    document.write('  </p>');
-    document.write('  <p class="sentence">');
-    for (j = 0; j < user_passage[i].childNodes.length; j++)  {
-      if (user_passage[i].childNodes[j].nodeValue)
-        document.write(user_passage[i].childNodes[j].nodeValue+'<br />');
+    // XML 解析
+    if (window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
     }
-    document.write('  </p>');
-    document.write('  <hr />');
-    document.write('</div>');
-  }
+    else {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    xmlhttp.open("GET","trans.xml",false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    
+    var user_name = xmlDoc.getElementsByTagName("author");
+    var user_ip = xmlDoc.getElementsByTagName("ip");
+    var user_date = xmlDoc.getElementsByTagName("date");
+    var user_passage = xmlDoc.getElementsByTagName("passage");
+    console.log(user_passage)
+    for (i = 0;i < user_name.length; i++) {
+        document.write('<div class="article">');
+        document.write('    <h2>'+user_name[i].childNodes[0].nodeValue+'</h2>');
+        document.write('    <p class="label">');
+        document.write('        <i class="fa fa-pagelines"></i> '+user_date[i].childNodes[0].nodeValue+" &nbsp;");
+        document.write('        <i class="fa fa-map-marker"></i> '+user_ip[i].childNodes[0].nodeValue);
+        document.write('    </p>');
+        document.write('    <p class="sentence">');
+        for (j = 0; j < user_passage[i].childNodes.length; j++)    {
+            if (user_passage[i].childNodes[j].nodeValue)
+                document.write(user_passage[i].childNodes[j].nodeValue+'<br />');
+        }
+        document.write('    </p>');
+        document.write('    <hr />');
+        document.write('</div>');
+    }
+    
+    var user_name_list = window.getArray("user_name_list")
+    var user_date_list = window.getArray("user_date_list")
+    var user_ip_list = window.getArray("user_ip_list")
+    var user_passage_list = window.getArray("user_passage_list")
+    
+    if (localStorage.user_name_list) {
+        for (i=0; i<user_name_list.length; i++) {
+            document.write('<div class="article">')
+            document.write('<h2>'+user_name_list[i]+'</h2>')
+            document.write('<p class="label">')
+            document.write('  <i class="fa fa-pagelines "></i>'+user_date_list[i])
+            document.write(' <i class="fa fa-map-marker"></i> '+user_ip_list[i])
+            document.write('</p>')
+            document.write('<p>'+user_passage_list[i]+'</p>')
+            document.write('<hr />')
+            document.write('</div>')
+        }
+    }
   </script>
 
   <!--
