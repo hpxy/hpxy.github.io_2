@@ -9,29 +9,34 @@
     font-size: 200%;
   }
   </style>
+  <script src="./tools.js"></script>
 </head>
 <body>
-  <script type="text/javascript" src="setHeaderClick.js"></script>
   <ul class="navigationBar">
-    <li><a id="essay" class="navigationLi" href="./index.html" target="_parent" onclick="liwasclick(this)">
+    <li><a id="essay" class="navigationLi" href="./index.html" target="_parent">
       <i class="fa fa-gg"></i><br />随笔</a></li>
       
-    <li><a id="experience" class="navigationLi" href="./viewer/code.html" target="_parent" onclick="liwasclick(this)">
+    <li><a id="experience" class="navigationLi" href="./viewer/code.html" target="_parent">
       <i class="fa fa-star-o"></i><br />经历</a></li>
     
-    <li><a id="mail" class="navigationLi" href="./viewer/fiction.html" target="_parent" onclick="liwasclick(this)">
+    <li><a id="mail" class="navigationLi" href="./viewer/fiction.html" target="_parent">
     <i class="fa fa-envelope-o"></i><br />邮件</a></li>
     
-    <li><a id="sentence" class="navigationLi" href="./viewer/sentence.html" target="_parent" onclick="liwasclick(this)">
+    <li><a id="sentence" class="navigationLi" href="./viewer/sentence.html" target="_parent">
       <i class="fa fa-code"></i><br />句子</a></li>
   </ul>
-  
-  <script type="text/javascript" src="setHeader.js"></script>
   
   <!-- 背景音乐 -->
   <audio controls="controls" autoplay="autoplay" controls="controls" hidden="hidden">
 		<source src="./sound/bgsound.mp3" type="audio/mp3">
 		<embed height="50px" width="100px" src="./sound/bgsound.mp3">
-	</audio>
+  </audio>
+  
+  <script>
+  // console.log(window.parent.location)
+  if (window.endswith(window.parent.location,"index.html")) {
+    console.log("True")
+  }
+  </script>
 </body>
 </html>
