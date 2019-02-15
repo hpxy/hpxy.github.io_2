@@ -8,6 +8,8 @@ CACHE MANIFEST
 
 NETWORK:
 *
+/jpg/*
+https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css
 
 FALLBACK:
-/viewer/404.html
+*html /viewer/404.html
