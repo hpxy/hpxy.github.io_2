@@ -7,7 +7,7 @@ CACHE MANIFEST
 /font/sendFont.ttf
 
 NETWORK:
-index.css
-*.js
-*.xml
-viewer/*.xml
+*
+
+FALLBACK:
+/viewer/404.html
