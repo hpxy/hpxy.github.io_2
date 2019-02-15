@@ -5,3 +5,7 @@ CACHE MANIFEST
 /font/loveFont.ttf
 # 1
 /font/sendFont.ttf
+
+NETWORK:
+index.css
+*.js
