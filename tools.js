@@ -17,8 +17,9 @@ function addtoArray(Item,index,data) {
 }
 
 function endswith(str, target) {
+    str = str.toString()
     var start = str.length-target.length;
-    // var arr = str.toString().substr(start,target.length);
+    var arr = str.substr(start,target.length);
     if(arr == target){
         return true;
     }

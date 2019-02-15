@@ -33,9 +33,23 @@
   </audio>
   
   <script>
-  // console.log(window.parent.location)
+  // console.log(window.parent.location.toString())
+  chooseColor = "#006060"
   if (window.endswith(window.parent.location,"index.html")) {
-    console.log("True")
+    document.getElementById("essay").style.color = chooseColor;
+  }
+  else if (window.endswith(window.parent.location,"code.html")) {
+    document.getElementById("experience").style.color = chooseColor;
+  }
+  
+  else if (window.endswith(window.parent.location,"fiction.html")) {
+    document.getElementById("mail").style.color = chooseColor;
+  }
+  else if (window.endswith(window.parent.location,"sentence.html")) {
+    document.getElementById("sentence").style.color = chooseColor;
+  }
+  else if (window.endswith(window.parent.location,"trans.html")) {
+    document.getElementById("sentence").style.color = chooseColor;
   }
   </script>
 </body>
