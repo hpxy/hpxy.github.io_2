@@ -9,3 +9,5 @@ CACHE MANIFEST
 NETWORK:
 index.css
 *.js
+*.xml
+viewer/*.xml

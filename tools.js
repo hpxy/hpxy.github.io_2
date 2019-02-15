@@ -25,3 +25,15 @@ function endswith(str, target) {
     }
     return false;
 }
+
+
+function _createXMLDoc(filename){
+    if (window.ActiveXObject) 
+        var xmldoc=new ActiveXObject("Microsoft.XMLDOM");
+    else if (document.implementation&&document.implementation.createDocument)
+        var xmldoc=document.implementation.createDocument("","doc",null);
+    xmldoc.async = false;
+    xmldoc.preserveWhiteSpace=true;
+    xmldoc.load(filename);
+    return xmldoc.documentElement;
+}

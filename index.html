@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
   <link rel="stylesheet" type="text/css" href="index.css" />
   <script type="text/javascript" src="index.js"></script>
+  <script src="tools.js"></script>
 </head>
 
 <body id="body" style="overflow: hidden">
@@ -28,7 +29,7 @@
   <h3> 随笔</h3><br />
   <div>
   <script>
-  // XML 解析
+  /*
   if (window.XMLHttpRequest){
     xmlhttp=new XMLHttpRequest();
   }
@@ -39,7 +40,10 @@
   xmlhttp.open("GET","index.xml",false);
   xmlhttp.send();
   xmlDoc = xmlhttp.responseXML;
+  */
   
+  var xmlDoc = window._createXMLDoc("index.xml");
+
   // console.log(xmlDoc)
   var article_title = xmlDoc.getElementsByTagName("title");
   var article_date = xmlDoc.getElementsByTagName("date");
