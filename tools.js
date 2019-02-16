@@ -28,12 +28,13 @@ function endswith(str, target) {
 
 
 function _createXMLDoc(filename){
-    if (window.ActiveXObject) 
-        var xmldoc=new ActiveXObject("Microsoft.XMLDOM");
-    else if (document.implementation&&document.implementation.createDocument)
-        var xmldoc=document.implementation.createDocument("","doc",null);
-    xmldoc.async = false;
-    xmldoc.preserveWhiteSpace=true;
-    xmldoc.load(filename);
-    return xmldoc.documentElement;
+    if (window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
+    }
+    else {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET",filename,false);
+    xmlhttp.send();
+    return xmlhttp.responseXML;
 }
