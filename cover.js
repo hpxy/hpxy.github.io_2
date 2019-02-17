@@ -5,8 +5,8 @@ var greeting = document.getElementById('greeting')
 coverImg.height = window.innerHeight -10
 coverImg.width = window.innerWidth - 10
 
-console.log(window.innerHeight)
-console.log(window.innerWidth)
+console.log("The window height is: "+window.innerHeight)
+console.log("The window width is: "+window.innerWidth)
 
 // 一些话
 function random(m, n){
@@ -31,7 +31,7 @@ saying = ['Have you ever remember,<br />the day that we passed together.',
 '还是害怕夜深人静时总想起你，<br />还是害怕的不经意听见你的消息。'
 ]
 ran = random(0,saying.length)
-console.log(ran)
+console.log("The id of sencence that we choose is: "+ran)
 greeting.innerHTML = saying[ran]
 
 // 界面只显示一次
@@ -40,4 +40,3 @@ if (ref.length > 0) {
     cover.hidden = true; 
     document.getElementById('body').style.overflow = 'visible'; 
 }
-console.log(ref);

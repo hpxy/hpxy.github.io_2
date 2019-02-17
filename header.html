@@ -10,8 +10,30 @@
   }
   </style>
   <script src="./tools.js"></script>
+  <script src="./index.js"></script>
+  
+  <script>
+  function unloadWindow() {
+    console.log("The background music current time is: "+document.getElementById("bgm").currentTime)
+    console.log("All the background music time is: "+document.getElementById("bgm").duration)
+    
+    window.resetCookie("bgmPuaseTime",document.getElementById("bgm").currentTime)
+    window.setCookie("path","/")
+    // console.log("We save the value of cookie is: "+window.getCookie("bgmPuaseTime"))
+  }
+  
+  function loadWindow() {
+    console.log("We get the value of bgm pauseTime is: "+window.getCookie("bgmPuaseTime"))
+    
+    bgm = document.getElementById("bgm")
+    bgm.currentTime = Number(window.getCookie("bgmPuaseTime"))
+    /*restart the music*/
+    if (bgm.currentTime == bgm.duration) 
+        bgm.currentTime = 0
+  }
+  </script>
 </head>
-<body>
+<body onunload="unloadWindow()" onload="loadWindow()">
   <ul class="navigationBar">
     <li><a id="essay" class="navigationLi" href="./index.html" target="_parent">
       <i class="fa fa-gg"></i><br />随笔</a></li>
@@ -27,14 +49,19 @@
   </ul>
   
   <!-- 背景音乐 -->
-  <audio controls="controls" autoplay="autoplay" controls="controls" hidden="hidden">
-		<source src="./sound/bgsound.mp3" type="audio/mp3">
-		<embed height="50px" width="100px" src="./sound/bgsound.mp3">
+  <audio id="bgm" controls="controls" autoplay="autoplay" controls="controls" hidden="hidden">
+    <source src="./sound/bgsound.mp3" type="audio/mp3">
+    <embed height="50px" width="100px" src="./sound/bgsound.mp3">
   </audio>
   
   <script>
+    window.lowVolume(document.getElementById("bgm"))
+    // console.log(document.getElementById("bgm").volume)
+  </script>
+  
+  <script>
   // console.log(window.parent.location.toString())
-  chooseColor = "#006060"
+  chooseColor = "#339393"
   if (window.endswith(window.parent.location,"index.html")) {
     document.getElementById("essay").style.color = chooseColor;
   }

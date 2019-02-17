@@ -22,26 +22,13 @@
   <h3> 远洋</h3><br />
   <div>
   <script>
-    /*
-    if (window.XMLHttpRequest){
-        xmlhttp=new XMLHttpRequest();
-    }
-    else {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    
-    xmlhttp.open("GET","trans.xml",false);
-    xmlhttp.send();
-    xmlDoc = xmlhttp.responseXML;
-    */
-
     var xmlDoc = window._createXMLDoc("trans.xml");
 
     var user_name = xmlDoc.getElementsByTagName("author");
     var user_ip = xmlDoc.getElementsByTagName("ip");
     var user_date = xmlDoc.getElementsByTagName("date");
     var user_passage = xmlDoc.getElementsByTagName("passage");
-    console.log(user_passage)
+    console.log("All of the passage is: "+user_passage.toString())
     for (i = 0;i < user_name.length; i++) {
         document.write('<div class="article">');
         document.write('    <h2>'+user_name[i].childNodes[0].nodeValue+'</h2>');
