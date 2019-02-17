@@ -26,9 +26,11 @@
     console.log("We get the value of bgm pauseTime is: "+window.getCookie("bgmPuaseTime"))
     
     bgm = document.getElementById("bgm")
-    bgm.currentTime = Number(window.getCookie("bgmPuaseTime"))
+    /* to keep frequency */
+    bgm.currentTime = Number(window.getCookie("bgmPuaseTime")-0.2)
     /*restart the music*/
-    if (bgm.currentTime == bgm.duration) 
+    /* I HAVE TO WRITE THIS RATHER THAN "bgm.currentTime == bgm.duration" WHICH IS TO ADAPT QQ browser */
+    if (bgm.currentTime >= bgm.duration-1) 
         bgm.currentTime = 0
   }
   </script>
