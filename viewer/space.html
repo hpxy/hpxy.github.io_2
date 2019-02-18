@@ -12,9 +12,8 @@
   <script>
     function on_upload_password() {
         password = document.getElementById("user_password").value;
-        /*Although i think it is stupid,but there are a lot of people had never know it.*/
+        /*Although i think this is stupid,but there are a lot of people had never known it.*/
         if (password == "lovelean") {
-            // console.log("The password that user input is: "+password)
             /* How stupid it is */
             window.location = "./sispace.html"
         }
@@ -24,7 +23,8 @@
   <form method="get" id="raw_user_password" onsubmit="on_upload_password()" action="javascript: on_upload_password()">
     <input id="user_password" type="text" name="name" placeholder="镜之密码..." min=1 max=20/><br /><br /><hr />
     
-    <embed src="../icon/upload.svg" 
+    <br />
+    <embed src="../icon/space_submit.svg" 
       type="image/svg+xml"
       pluginspage="http://www.adobe.com/svg/viewer/install/" class="svg middle" onclick="document.getElementById('raw_user_password').submit();" />
   </form>

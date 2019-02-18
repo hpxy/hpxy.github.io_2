@@ -129,6 +129,7 @@ p.greeting {
 .middle {
     position: relative;
     left: 50%;
+    size: 220%;
 }
 .svg {
   height: 25px;
