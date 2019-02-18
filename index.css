@@ -126,7 +126,10 @@ p.greeting {
     right: 20px;
     // size: 200%;
   }
-  
+.middle {
+    position: relative;
+    left: 50%;
+}
 .svg {
   height: 25px;
   width: 25px;
