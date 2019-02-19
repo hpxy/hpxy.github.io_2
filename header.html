@@ -64,24 +64,17 @@
   <script>
   // console.log(window.parent.location.toString())
   chooseColor = "#339393"
-  if (window.endswith(window.parent.location,"index.html")) {
-    document.getElementById("essay").style.color = chooseColor;
-  }
-  else if (window.endswith(window.parent.location,"code.html")) {
-    document.getElementById("experience").style.color = chooseColor;
-  }
   
-  else if (window.endswith(window.parent.location,"sispace.html")) {
-    document.getElementById("experience").style.color = chooseColor;
-  }
-  else if (window.endswith(window.parent.location,"fiction.html")) {
-    document.getElementById("mail").style.color = chooseColor;
-  }
-  else if (window.endswith(window.parent.location,"sentence.html")) {
-    document.getElementById("sentence").style.color = chooseColor;
-  }
-  else if (window.endswith(window.parent.location,"trans.html")) {
-    document.getElementById("sentence").style.color = chooseColor;
+  console.log("The page user stay is: "+window.getFilename(window.parent.location))
+  switch (window.getFilename(window.parent.location))
+  {
+    case "index.html"   : document.getElementById("essay").style.color = chooseColor;break;
+    case "code.html"    : document.getElementById("experience").style.color = chooseColor;break;
+    case "sispace.html" : document.getElementById("experience").style.color = chooseColor;break;
+    case "although.html": document.getElementById("experience").style.color = chooseColor;break;
+    case "fiction.html" : document.getElementById("mail").style.color = chooseColor;break;
+    case "sentence.html": document.getElementById("sentence").style.color = chooseColor;break;
+    case "trans.html"   : document.getElementById("sentence").style.color = chooseColor;break;
   }
   </script>
 </body>

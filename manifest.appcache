@@ -1,7 +1,6 @@
 CACHE MANIFEST
 /sound/bgsound.mp3
 /jpg/cover.jpg
-/icon/upload.svg
 /font/loveFont.ttf
 # 1
 /font/sendFont.ttf
@@ -9,6 +8,7 @@ CACHE MANIFEST
 NETWORK:
 *
 /icon/*
+/other/*
 /jpg/*
 https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css
 

@@ -31,6 +31,11 @@ function endswith(str, target) {
     return false;
 }
 
+// 获取路径中的文件名
+function getFilename(path) {
+    return path.toString().slice(path.toString().lastIndexOf('/')+1)
+}
+
 // 创建xml解析器
 function _createXMLDoc(filename){
     if (window.XMLHttpRequest){
