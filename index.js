@@ -1,3 +1,7 @@
+TESTMODE = false;
+if (TESTMODE)
+    console.log("The test have opened")
+
 //防止页面后退
 window.history.pushState(null, null, document.URL);
 window.addEventListener('popstate', function () {

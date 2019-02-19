@@ -6,14 +6,21 @@
   <meta charset="utf-8" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
   <link rel="stylesheet" type="text/css" href="./../index.css" />
+  <script src="../moubles/sha1.js"></script>
 </head>
 
 <body>
   <script>
+    raw_password = "b226278c7bc5ee0f85d00cd42d012b2690a53e01"
+    console.log("Test sha1: "+window.hex_sha1("abc"))
+    
     function on_upload_password() {
         password = document.getElementById("user_password").value;
+        if (password)
+            console.log("The password of user input is: "+window.hex_sha1(password))
+            
         /*Although i think this is stupid,but there are a lot of people had never known it.*/
-        if (password == "lovelean") {
+        if (window.hex_sha1(password) == raw_password) {
             /* How stupid it is */
             window.location = "./sispace.html"
         }
