@@ -13,4 +13,4 @@ NETWORK:
 https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css
 
 FALLBACK:
-*html /viewer/404.html
+*.html /viewer/404.html
