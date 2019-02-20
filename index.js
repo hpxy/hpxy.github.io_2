@@ -1,4 +1,4 @@
-TESTMODE = false;
+TESTMODE = 1;
 if (TESTMODE)
     console.log("The test have opened")
 
