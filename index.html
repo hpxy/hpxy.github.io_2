@@ -29,8 +29,13 @@
   <h3> 随笔</h3><br />
   <div>
   <script>
-  var xmlDoc = window._createXMLDoc("index.xml");
-
+  try {
+      var xmlDoc = window._createXMLDoc("index.xml");
+  }
+  catch {
+      // 刷新页面
+      window.location.reload()
+  }
   // console.log(xmlDoc)
   var article_title = xmlDoc.getElementsByTagName("title");
   var article_date = xmlDoc.getElementsByTagName("date");
