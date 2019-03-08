@@ -5,16 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
   <meta charset="utf-8" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
-  <link rel="stylesheet" type="text/css" href="../moubles/firefox_index.css" />
   <link rel="stylesheet" type="text/css" href="../moubles/firefox_css.css" />
-  <link rel="stylesheet" type="text/css" href="./../index.css" />
+  <link rel="stylesheet" type="text/css" href="../moubles/rain.css">
+  <style>
+  @font-face {
+    font-family: amazFont;
+    src: url("../font/amaz.ttf")
+  }
+  i { 
+    font-family: amazFont;
+    font-style: normal;
+    font-size: 160%;
+    padding: 0px 10px 10px 10px;
+    word-break:break-all;
+    letter-spacing: 0.5px;
+  }
+  p { 
+    font-size: 100%;
+    line-height: 150%;
+    font-family: noteFont, sans-serif;
+    padding: 0px 10px 10px 10px;
+    
+    /*强制换行*/
+    word-break:break-all;
+  }
+  </style>
+  
 </head>
 <body>
-  <h3> 呓语-自言 </h3>
-  <i class="sent">Forgive me because I love you.</i>
+  <i class="sent" style="padding:10px;">Forgive me because I love you.</i>
+  <canvas id="canvas1"></canvas>
+  <canvas id="canvas2"></canvas>
+  <canvas id="canvas3"></canvas>
+  <p class="sentence">Hey 你还好吗?</p>
 
-  <div>
-    
-  </div>
-</body>
+  <script src="../moubles/rain.js"></script>
+  </body>
 </html>

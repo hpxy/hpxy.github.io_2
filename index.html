@@ -11,6 +11,18 @@
   <script src="tools.js"></script>
 </head>
 
+<script>
+  try {
+      var xmlDoc = window._createXMLDoc("index.xml");
+  }
+  catch {
+    if (window.location.toString().slice(0,5) == "http:") {
+        /* chang http to https */
+        window.location = "https:"+window.location.toString().slice(5,-1)
+    }
+  }
+</script>
+
 <body id="body" style="overflow: hidden">
   <div id="cover" 
        onclick="this.hidden = true; //隐藏封面
@@ -32,13 +44,6 @@
   
   <div>
   <script>
-  try {
-      var xmlDoc = window._createXMLDoc("index.xml");
-  }
-  catch {
-      // 刷新页面
-      window.location.reload()
-  }
   // console.log(xmlDoc)
   var article_title = xmlDoc.getElementsByTagName("title");
   var article_date = xmlDoc.getElementsByTagName("date");

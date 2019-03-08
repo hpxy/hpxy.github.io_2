@@ -1,6 +1,11 @@
-TESTMODE = 1;
-if (TESTMODE)
+CONTYPE = window.location.toString().slice(0,5)
+console.log("CONTYPE is: "+'[ '+CONTYPE+' ]')
+
+if (CONTYPE == "file:") {
+    TESTMODE = 1
     console.log("The test mode have opened")
+}
+else TESTMODE = 0
 
 /*
     UNCACHED=0;     未缓存
