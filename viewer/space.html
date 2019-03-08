@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-en" manifest="../manifest.appcache">
+<html lang="zh-en">
 <head>
   <title>haopXpycary's memories</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
   <meta charset="utf-8" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
+  <link rel="stylesheet" type="text/css" href="../moubles/firefox_css.css" />
   <link rel="stylesheet" type="text/css" href="./../index.css" />
   <script src="../moubles/sha1.js"></script>
 </head>
@@ -26,6 +27,9 @@
         }
         else if (window.hex_sha1(password) == "de3460832ea070effabbc7032d7594bbde1bb120") {
             window.location = "./although.html"
+        }
+        else if (window.hex_sha1(password) == "f4cc6e82140048ead7015f2917eb56e3e50a1f00") {
+            window.location = "./sayin.html"
         }
         else {
             document.getElementById("user_password").value = ''

@@ -76,3 +76,8 @@ function setCookie(name, value) {
 function resetCookie(name, value) {
     document.cookie = name + "=" + encodeURIComponent(value.toString());
 }
+
+// random retrurn a number between a-b
+function randint(m, n) {
+    return Math.floor(Math.random()*10**17)%(n-m)+m; 
+}

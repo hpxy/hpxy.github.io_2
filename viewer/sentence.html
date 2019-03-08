@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-en" manifest="../manifest.appcache">
+<html lang="zh-en">
 <head>
   <title>haopXpycary's memories</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
   <meta charset="utf-8" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
+  <link rel="stylesheet" type="text/css" href="../moubles/firefox_css.css" />
   <link rel="stylesheet" type="text/css" href="./../index.css" />
   <script type="text/javascript" src="../index.js"></script>
   
@@ -19,7 +20,9 @@
   <!-- 跳转到发送界面 -->
   <p class="righttop"><i class="fa fa-send-o" onclick="location='trans.html'"></i></p>
   
-  <h3> 远洋</h3><br />
+  <h3> 远洋</h3>
+  <i class="sent">Have you seen it?</i>
+  
   <div>
   <script>
     var xmlDoc = window._createXMLDoc("trans.xml");
