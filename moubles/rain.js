@@ -6,15 +6,21 @@ var ctx2 = canvas2.getContext('2d');
 var ctx3 = canvas3.getContext('2d');
 
 var rainthroughnum = 500;
-var speedRainTrough = 25;
+var speedRainTrough = 20;
 var RainTrough = [];
 
-var rainnum = 500;
+var rainnum = 82;
 var rain = [];
 
 var lightning = [];
 var lightTimeCurrent = 0;
 var lightTimeTotal = 0;
+
+/* ------------self addition----------------- */
+// 非触摸设备
+if (!document.hasOwnProperty("ontouchstart"))
+    rainnum = 400
+/* ----------------------------------------- */
 
 var w = canvas1.width = canvas2.width = canvas3.width = window.innerWidth;
 var h = canvas1.height = canvas2.height = canvas3.height = window.innerHeight;
@@ -67,8 +73,7 @@ function createRain() {
   }
 }
 
-function createLightning() {
-};
+function createLightning() {};
 
 function drawRainTrough(i) {
   ctx1.beginPath();
@@ -91,8 +96,7 @@ function drawRain(i) {
   ctx2.stroke();
 }
 
-function drawLightning() {
-};
+function drawLightning() {};
 
 function animateRainTrough() {
   clearcanvas1();

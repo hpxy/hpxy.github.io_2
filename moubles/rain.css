@@ -5,7 +5,13 @@ html {
 *,
 *:before,
 *:after {
+  padding: 0px;
+  margin: 0px;
   box-sizing: inherit;
+}
+
+i {
+    padding: 10px 10px 10px 10px;
 }
 
 html,
@@ -51,4 +57,25 @@ canvas {
 
 #canvas1 {
   z-index: 100;
+}
+
+@font-face {
+  font-family: amazFont;
+  src: url("../font/amaz.ttf")
+}
+i { 
+  font-family: amazFont;
+  font-style: normal;
+  font-size: 160%;
+  padding: 10px 10px 10px 10px;
+  word-break:break-all;
+  letter-spacing: 0.5px;
+}
+p { 
+  font-size: 80%;
+  line-height: 150%;
+  font-family: noteFont, sans-serif;
+  padding: 5px 10px 10px 10px;
+  /*强制换行*/
+  word-break:break-all;
 }

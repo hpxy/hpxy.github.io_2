@@ -18,8 +18,10 @@
   catch {
     if (window.location.toString().slice(0,5) == "http:") {
         /* chang http to https */
+        /* http://xx -> https://xx */
         window.location = "https:"+window.location.toString().slice(5,-1)
     }
+    document.referrer = ""
   }
 </script>
 
@@ -44,7 +46,7 @@
   
   <div>
   <script>
-  // console.log(xmlDoc)
+  xmlDoc = window.xmlDoc
   var article_title = xmlDoc.getElementsByTagName("title");
   var article_date = xmlDoc.getElementsByTagName("date");
   var article_content = xmlDoc.getElementsByTagName("passage");
