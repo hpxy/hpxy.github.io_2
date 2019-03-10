@@ -7,6 +7,7 @@ if (CONTYPE == "file:") {
 }
 else TESTMODE = 0
 
+// -------------------------------------------------------------------------------------
 /*
     UNCACHED=0;     未缓存
     IDLE=1;         空闲状态
@@ -26,16 +27,26 @@ switch (Number(window.applicationCache.status)) {
 }
 console.log("The applicationCache status is: "+ACSTATE)
 
+// ---------------------------------------------------------------------------------------
 //防止页面后退
 window.history.pushState(null, null, document.URL);
 window.addEventListener('popstate', function () {
     window.history.pushState(null, null, document.URL);
 });
 
+// ---------------------------------------------------------------------------------------
 //音量控制
 function lowVolume(self) {
     if (parent.document.referrer.length == 0) {
         if (self.volume > 0.3) self.volume = 0.3
         console.log("Now the volume of background music is: ",self.volume.toString())
+    }
+    
+    // 查看cookie
+    if (navigator.cookieEnabled) console.log("The cookie is enabled.")
+    else {
+        console.log("To get better experience for yourself, please turn cookie to enable.")
+        self.pause()
+        console.log("Deleted the background sound.")
     }
 }

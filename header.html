@@ -28,10 +28,6 @@
     bgm = document.getElementById("bgm")
     /* to keep frequency */
     bgm.currentTime = Number(window.getCookie("bgmPuaseTime")-0.2)
-    /*restart the music*/
-    /* I HAVE TO WRITE THIS RATHER THAN "bgm.currentTime == bgm.duration" WHICH IS TO ADAPT QQ browser */
-    if (bgm.currentTime >= bgm.duration-1) 
-        bgm.currentTime = 0
   }
   </script>
 </head>
@@ -57,14 +53,17 @@
   </audio>
   
   <script>
-    window.lowVolume(document.getElementById("bgm"))
-    // console.log(document.getElementById("bgm").volume)
+      window.lowVolume(document.getElementById("bgm"))
   </script>
   
   <script>
   // console.log(window.parent.location.toString())
+  /*
+  if (typeof window.BRIGHTNESSMODE === "undefined") window.BRIGHTNESSMODE = 1
+  if (window.BRIGHTNESSMODE == 1) chooseColor = "#339393"
+  else chooseColor = "#DDD"
+  */
   chooseColor = "#339393"
-  
   console.log("The page user stay is: "+window.getFilename(window.parent.location))
   switch (window.getFilename(window.parent.location))
   {

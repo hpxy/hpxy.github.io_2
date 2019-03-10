@@ -1,5 +1,3 @@
-console.log("Successed in importing tools.js.")
-
 // 保存数组
 function saveArray(Item,new_arrey,index) {
     index = Number(index)
@@ -80,4 +78,23 @@ function resetCookie(name, value) {
 // random retrurn a number between a-b
 function randint(m, n) {
     return Math.floor(Math.random()*10**17)%(n-m)+m; 
+}
+
+
+function loadcss(url) {
+    var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+    link.type ='text/css';
+    link.rel  = 'stylesheet';
+    link.href = url;
+    head.appendChild(link);
+}
+
+function removecss(url) {
+    var allLink = document.getElementsByTagName('link')
+    for (i=0;i<allLink.length;i++) {
+        if (window.getFilename(allLink[i].href) == url) {
+            allLink[i].parentNode.removeChild(allLink[i])
+        }
+    }
 }

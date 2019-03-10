@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-en" manifest="manifest.appcache">
+<html lang="zh-en">
 <head>
   <title>haopXpycary's memories</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
   <link rel="stylesheet" type="text/css" href="./moubles/firefox_css.css" />
   <link rel="stylesheet" type="text/css" href="index.css" />
-  <script type="text/javascript" src="index.js"></script>
   <script src="tools.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </head>
 
 <script>
@@ -24,6 +24,7 @@
     document.referrer = ""
   }
 </script>
+<script src="./modeChange.js"></script>
 
 <body id="body" style="overflow: hidden">
   <div id="cover" 
@@ -40,7 +41,10 @@
   
   <!-- 导航栏 -->
   <iframe src="./header.html" width="100%" height="60px" frameborder="0" scrolling="no" name="headFrame"></iframe>
-  
+  <!--
+  <embed src="./icon/sun.svg" type="image/svg+xml" id="change_mode_icon" class="svg righttop" onclick="window.modeChange()" />
+    <script>if (window.TESTMODE) document.write('<a class="righttop" onclick="modeChange()">change_mode</a>') </script>
+  -->
   <h3> 随笔</h3>
   <i class="sent">The God bless our everyone.</i>
   
